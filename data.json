@@ -1,0 +1,134 @@
+{
+  "name": "Matheus Martins Pazinati",
+  "description": "Front-end Developer",
+  "github": "Matheus-Pazinati",
+  "playlists": {
+    "Músicas": [
+        {
+          "title": "Pink Floyd - Poles Apart",
+          "url": "https://www.youtube.com/watch?v=5ciWB7VykII",
+          "thumb": "https://img.youtube.com/vi/5ciWB7VykII/hqdefault.jpg"
+        },
+        {
+          "title": "Metallica - Master of Puppets (Live)",
+          "url": "https://www.youtube.com/watch?v=ujwiWjJLwBg",
+          "thumb": "https://img.youtube.com/vi/ujwiWjJLwBg/hqdefault.jpg"
+        },
+        {
+          "title": "Megadeth - Holy Wars...The Punishment Due",
+          "url": "https://www.youtube.com/watch?v=9d4ui9q7eDM",
+          "thumb": "https://img.youtube.com/vi/9d4ui9q7eDM/hqdefault.jpg"
+        },
+        {
+          "title": "Ozzy Osbourne - The Ultimate Sin",
+          "url": "https://www.youtube.com/watch?v=O_ypaOIVmaA",
+          "thumb": "https://img.youtube.com/vi/O_ypaOIVmaA/hqdefault.jpg"
+        },
+        {
+          "title": "Iron Maiden - The Evil That Men Do",
+          "url": "https://www.youtube.com/watch?v=M6JpxDebokM",
+          "thumb": "https://img.youtube.com/vi/M6JpxDebokM/hqdefault.jpg"
+        },
+        {
+          "title": "Helloween - You Always Walk Alone",
+          "url": "https://www.youtube.com/watch?v=ihVH6QRqvkI",
+          "thumb": "https://img.youtube.com/vi/ihVH6QRqvkI/hqdefault.jpg"
+        },
+        {
+          "title": "Judas Priest - The Sentinel",
+          "url": "https://www.youtube.com/watch?v=8Ksksu9JDkg",
+          "thumb": "https://img.youtube.com/vi/8Ksksu9JDkg/hqdefault.jpg"
+        },
+        {
+          "title": "Led Zeppelin - Achilles Last Stand",
+          "url": "https://www.youtube.com/watch?v=1t4KLOm7pO0",
+          "thumb": "https://img.youtube.com/vi/1t4KLOm7pO0/hqdefault.jpg"
+        }
+      ],
+    "Filmes": [
+      {
+        "title": "The Matrix",
+        "url": "https://www.youtube.com/watch?v=nUEQNVV3Gfs",
+        "thumb": "https://img.youtube.com/vi/nUEQNVV3Gfs/hqdefault.jpg"
+      },
+      {
+        "title": "Forrest Gump: O Contador de Histórias",
+        "url": "https://www.youtube.com/watch?v=vDY_uZAaU7g",
+        "thumb": "https://img.youtube.com/vi/vDY_uZAaU7g/hqdefault.jpg"
+      },
+      {
+        "title": "Clube da Luta",
+        "url": "https://www.youtube.com/watch?v=ejvK2jW8dh8",
+        "thumb": "https://img.youtube.com/vi/ejvK2jW8dh8/hqdefault.jpg"
+      },
+      {
+        "title": "Um Sonho de Liberdade",
+        "url": "https://www.youtube.com/watch?v=v1nZq1vfgSw",
+        "thumb": "https://img.youtube.com/vi/v1nZq1vfgSw/hqdefault.jpg"
+      },
+      {
+        "title": "Fome de Poder",
+        "url": "https://www.youtube.com/watch?v=8LvMLEZZGZs",
+        "thumb": "https://img.youtube.com/vi/8LvMLEZZGZs/hqdefault.jpg"
+      },
+      {
+        "title": "Charlie Chaplin: Tempos Modernos",
+        "url": "https://www.youtube.com/watch?v=4OmEi_AIjZc",
+        "thumb": "https://img.youtube.com/vi/4OmEi_AIjZc/hqdefault.jpg"
+      },
+      {
+        "title": "Bastardos Inglórios",
+        "url": "https://www.youtube.com/watch?v=QULkfEiz_e4",
+        "thumb": "https://img.youtube.com/vi/QULkfEiz_e4/hqdefault.jpg"
+      },
+      {
+        "title": "Corra!",
+        "url": "https://www.youtube.com/watch?v=mDGV5UucTu8&",
+        "thumb": "https://img.youtube.com/vi/mDGV5UucTu8&/hqdefault.jpg"
+      },
+      {
+        "title": "Donnie Darko",
+        "url": "https://www.youtube.com/watch?v=bzLn8sYeM9o",
+        "thumb": "https://img.youtube.com/vi/bzLn8sYeM9o/hqdefault.jpg"
+      }
+    ],
+    "Tecnologia": [
+      {
+        "title": "Se Você Passar Por Esses 5 Desafios, Você Aprendeu React JS",
+        "url": "https://www.youtube.com/watch?v=aJR7f45dBNs",
+        "thumb": "https://img.youtube.com/vi/aJR7f45dBNs/hqdefault.jpg"
+      },
+      {
+        "title": "Evolução do FRONT-END na prática (SPA, SSG e SSR)",
+        "url": "https://www.youtube.com/watch?v=dkPXIobiBM8",
+        "thumb": "https://img.youtube.com/vi/dkPXIobiBM8/hqdefault.jpg"
+      },
+      
+      {
+        "title": "A Forma Ideal de Projetos Web | Os 12 Fatores",
+        "url": "https://www.youtube.com/watch?v=gpJgtED36U4",
+        "thumb": "https://img.youtube.com/vi/gpJgtED36U4/hqdefault.jpg"
+      },
+      {
+        "title": "CSS-in-JS na prática! Criando componentes com React e CSS no NextJS",
+        "url": "https://www.youtube.com/watch?v=aDKxJfJiM28",
+        "thumb": "https://img.youtube.com/vi/aDKxJfJiM28/hqdefault.jpg"
+      },
+      {
+        "title": "API // Dicionário do Programador",
+        "url": "https://www.youtube.com/watch?v=vGuqKIRWosk",
+        "thumb": "https://img.youtube.com/vi/vGuqKIRWosk/hqdefault.jpg"
+      },
+      {
+        "title": "Estrutura de dados com Roberta Arcoverde | #HipstersPontoTube",
+        "url": "https://www.youtube.com/watch?v=57VqgNjbzrg",
+        "thumb": "https://img.youtube.com/vi/57VqgNjbzrg/hqdefault.jpg"
+      },
+      {
+        "title": "Desestruturação no javascript com exemplos - Destructuring Assignment JS",
+        "url": "https://www.youtube.com/watch?v=ruoHSuTKp-U",
+        "thumb": "https://img.youtube.com/vi/ruoHSuTKp-U/hqdefault.jpg"
+      }
+    ]
+  }
+}
