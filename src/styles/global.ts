@@ -19,9 +19,9 @@ export const CSSReset = createGlobalStyle`
   body {
     display: flex;
     flex: 1;
+    width: 100%;
   }
   #__next {
-    display: flex;
     flex: 1;
   }
   /* Globals */
@@ -34,5 +34,8 @@ export const CSSReset = createGlobalStyle`
     &:focus {
       opacity: .5;
     }
+  }
+  li {
+    list-style: none;
   }
 `;
