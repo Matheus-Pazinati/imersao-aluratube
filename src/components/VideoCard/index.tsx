@@ -1,11 +1,21 @@
 import data from '../../../data.json'
 import { StyledVideo } from './styles'
 
-export function VideoCard() {
+interface VideoType {
+  title: string;
+  url: string;
+  thumb: string
+}
+
+interface VideoCardProps {
+  data: VideoType
+}
+
+export function VideoCard({ data }: VideoCardProps) {
   return (
-    <StyledVideo href={data.playlists.Filmes[0].url} target="_blank">
-      <img src={data.playlists.Tecnologia[0].thumb} alt="" />
-      <span>{data.playlists.Tecnologia[0].title}</span>
+    <StyledVideo href={data.url} target="_blank">
+      <img src={data.thumb} alt="" />
+      <span>{data.title}</span>
     </StyledVideo>
   )
 }

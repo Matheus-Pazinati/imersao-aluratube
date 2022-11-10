@@ -5,8 +5,6 @@ export const StyledVideo = styled.a`
   flex-direction: column;
   gap: 8px;
   border-radius: 4px;
-  scroll-snap-align: start;
-
   img {
     aspect-ratio: 16/9;
     font-weight: 500;
@@ -18,5 +16,6 @@ export const StyledVideo = styled.a`
   span {
     font-size: 1rem;
     color: #000;
+    padding: 0 4px;
   }
 `

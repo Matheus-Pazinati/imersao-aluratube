@@ -1,25 +1,26 @@
 import { VideoCard } from "../VideoCard";
 import { StyledPlaylist} from "./styles";
 
-interface PlaylistProps {
+import data from '../../../data.json'
+
+export interface PlaylistProps {
   title: string
 }
 
 export function Playlist({ title }: PlaylistProps) {
- return (
-  <StyledPlaylist>
-    <h2>{title}</h2>
-    <ul>
-      <li><VideoCard /></li>
-      <li><VideoCard /></li>
-      <li><VideoCard /></li>
-      <li><VideoCard /></li>
-      <li><VideoCard /></li>
-      <li><VideoCard /></li>
-      <li><VideoCard /></li>
-      <li><VideoCard /></li>
-      <li><VideoCard /></li>
-    </ul>
-  </StyledPlaylist>
- ) 
+  const playlists = data.playlists[title as keyof typeof data.playlists]
+  return (
+    <StyledPlaylist>
+      <h2>{title}</h2>
+      <ul>
+        {playlists.map((playlist) => {
+          return (
+            <li>
+              <VideoCard data={playlist} />
+            </li>
+          )
+        })}
+      </ul>
+    </StyledPlaylist>
+  ) 
 }

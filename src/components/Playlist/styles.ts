@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const StyledPlaylist = styled.div`
   padding: 1rem 0;
+  width: 100%;
+  margin-bottom: 2rem;
     h2 {
       font-size: 16px;
       margin-bottom: 16px;
