@@ -1,7 +1,7 @@
-import { VideoCard } from "../VideoCard";
+import { VideoCard } from "./components/VideoCard";
 import { StyledPlaylist} from "./styles";
 
-import data from '../../../data.json'
+import data from '../../../../../data.json'
 
 export interface PlaylistProps {
   title: string

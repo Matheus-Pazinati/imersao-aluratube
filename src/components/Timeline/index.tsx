@@ -1,8 +1,6 @@
-import { Playlist } from "../Playlist";
+import { Playlist } from "./components/Playlist";
 import { StyledTimeline } from "./styles";
 import data from '../../../data.json'
-
-import { PlaylistProps } from '../Playlist'
 
 export function Timeline() {
   const playlistNames = Object.keys(data.playlists)
