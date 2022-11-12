@@ -1,12 +1,21 @@
 import styled from 'styled-components'
 
+interface BannerProps {
+  banner: string
+}
+
 export const StyledHeader = styled.div`
-  .header-cover {
     width: 100%;
-    height: 15rem;
     margin-top: 56px;
-    object-fit: cover;
-  }
+`
+
+export const StyledBanner= styled.div<BannerProps>`
+  background: url(${({ banner }) => banner});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 230px;
+  width: 100%;
 `
 
 export const StyledProfile = styled.div`
@@ -14,7 +23,7 @@ export const StyledProfile = styled.div`
   align-items: center;
   gap: 12px;
   padding: 1rem;
-
+  background-color: ${({ theme }) => theme.backgroundLevel1};
   h2 {
     font-size: 1.5rem;
     font-weight: bold;

@@ -1,14 +1,11 @@
 import { Avatar } from "../Avatar";
 import data from '../../../data.json'
-import { StyledHeader, StyledProfile } from "./styles";
+import { StyledBanner, StyledHeader, StyledProfile } from "./styles";
 
 export function Header() {
   return (
     <StyledHeader>
-      <img 
-        className="header-cover"
-        src="https://www.whow.com.br/wp-content/uploads/2022/02/tecnologias-capa-1.jpg"
-      />
+      <StyledBanner banner={data.banner} />
       <StyledProfile>
         <Avatar source={`https://github.com/${data.github}.png`} />
         <div>

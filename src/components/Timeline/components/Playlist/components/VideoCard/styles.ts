@@ -15,7 +15,7 @@ export const StyledVideo = styled.a`
   }
   span {
     font-size: 1rem;
-    color: #000;
+    color: ${({ theme }) => theme.textColorBase};
     padding: 0 4px;
   }
 `
