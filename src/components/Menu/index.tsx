@@ -1,4 +1,5 @@
 import { Logo } from "../../assets/Logo";
+import DarkModeSwitch from "./components/DarkModeSwitch";
 
 import Search, {} from './components/Search'
 
@@ -11,6 +12,7 @@ export function Menu() {
         <Logo />
       </div>
       <Search />
+      <DarkModeSwitch />
     </StyledMenu>
   )
 }

@@ -18,12 +18,11 @@ function ProviderWrapper({ children }: ColorModeProviderProps) {
 
 function MyApp({ Component, pageProps }: AppProps) {
   const { colorMode } = useContext(ColorModeContext)
-  console.log(colorMode)
   return (
-      <ThemeProvider theme={defaultTheme[colorMode]}>
-        <CSSReset />
-        <Component {...pageProps} />
-      </ThemeProvider>
+    <ThemeProvider theme={defaultTheme[colorMode]}>
+      <CSSReset />
+      <Component {...pageProps} />
+    </ThemeProvider>
   )
 }
 
