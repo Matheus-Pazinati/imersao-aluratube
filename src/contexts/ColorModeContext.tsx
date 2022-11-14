@@ -13,7 +13,7 @@ export interface ColorModeProviderProps {
 export const ColorModeContext = createContext({} as ColorContextProps)
 
 export function ColorModeProvider({ children }: ColorModeProviderProps) {
-  const [colorMode, setColorMode] = useState('dark' as keyof typeof defaultTheme)
+  const [colorMode, setColorMode] = useState('light' as keyof typeof defaultTheme)
 
   function changeColorMode() {
     if (colorMode === 'light') {
