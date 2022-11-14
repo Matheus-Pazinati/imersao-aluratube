@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { FormEvent, useState } from "react";
 import { StyledRegisterVideo } from "./styles";
 
+import { useForm } from '../../hooks/useForm'
+
 export function RegisterVideo() {
-  const [modalVisible, setModalVisible] = useState(true)
+  const [modalVisible, setModalVisible] = useState(false)
+  const formRegister = useForm()
 
   function closeModal() {
     setModalVisible(false)
@@ -19,18 +22,29 @@ export function RegisterVideo() {
       </button>
       {modalVisible &&
         (
-          <form action="">
+          <form
+            onSubmit={(e: FormEvent) => {
+              e.preventDefault()
+              console.log(formRegister.formData)
+              formRegister.clearForm()
+              closeModal()
+            }}
+          >
             <div>
               <button type="button" className="close-modal" onClick={closeModal}>
                 X
               </button>
               <input
                 placeholder="Titulo do vídeo"
-                name="titulo"
+                name="title"
+                onChange={formRegister.handleChange}
+                value={formRegister.formData.title}
               />
               <input
                 placeholder="URL"
                 name="url"
+                onChange={formRegister.handleChange}
+                value={formRegister.formData.url}
               />
               <button type="submit">
                 Cadastrar
