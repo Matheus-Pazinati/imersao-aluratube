@@ -1,14 +1,13 @@
 import { Playlist } from "./components/Playlist";
 import { StyledTimeline } from "./styles";
-import data from '../../../data.json'
 
 export function Timeline() {
-  const playlistNames = Object.keys(data.playlists)
+  const playlistNames = ["Músicas", "Filmes", "Tecnologia"]
   return (
     <StyledTimeline>
       {playlistNames.map((playlistName) => {
         return (
-          <Playlist title={playlistName} />
+          <Playlist title={playlistName} key={playlistName} />
         )
       })}
     </StyledTimeline>
