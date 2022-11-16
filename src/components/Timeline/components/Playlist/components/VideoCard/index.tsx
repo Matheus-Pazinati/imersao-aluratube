@@ -1,4 +1,3 @@
-import data from '../../../../../../../data.json'
 import { StyledVideo } from './styles'
 
 interface VideoType {

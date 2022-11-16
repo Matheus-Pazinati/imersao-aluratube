@@ -1,21 +1,35 @@
 import { VideoCard } from "./components/VideoCard";
 import { StyledPlaylist} from "./styles";
 
-import { useContext } from 'react'
+import { useContext, useEffect, useState } from 'react'
 
 import { SearchContext } from '../../../../contexts/SearchContext'
 
-import data from '../../../../../data.json'
+import { videoService, VideoProps } from "../../../../services/videoService";
 
 export interface PlaylistProps {
   title: string
 }
 
 export function Playlist({ title }: PlaylistProps) {
-  const playlists = data.playlists[title as keyof typeof data.playlists]
+  const service = videoService()
+  const [playlistVideos, setPlaylistVideos] = useState<VideoProps[]>([])
 
   const { searchFilter } = useContext(SearchContext)
-  const playlistFiltered = playlists.filter((item) => {
+
+  async function getVideosFromDataBase() {
+    const { data } = await service.getAllVideos()
+    const playlist = data?.filter((videos) => {
+      return videos.type === title
+    })
+    setPlaylistVideos(playlist as VideoProps[])
+  }
+
+  useEffect(() => {
+    getVideosFromDataBase()
+  },[])
+
+  const playlistFiltered = playlistVideos.filter((item) => {
     return item.title.toLowerCase().includes(searchFilter.toLowerCase())
   })
 

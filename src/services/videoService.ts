@@ -15,6 +15,9 @@ export function videoService() {
   return {
     createVideo(data: VideoProps) {
       return supabase.from("video").insert(data)
+    },
+    getAllVideos() {
+      return supabase.from("video").select("*")
     }
   }
 }
