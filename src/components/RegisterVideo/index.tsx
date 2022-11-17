@@ -5,6 +5,9 @@ import { StyledRegisterVideo } from "./styles";
 import { useForm } from '../../hooks/useForm'
 import { VideoProps, videoService } from "../../services/videoService";
 
+import Swal from 'sweetalert2'
+import { useTheme } from "styled-components";
+
 function getThumbFromVideo(url: string) {
   return `https://img.youtube.com/vi/${url.split("v=")[1]}/hqdefault.jpg`
 }
@@ -14,12 +17,37 @@ export function RegisterVideo() {
   const formRegister = useForm()
   const service = videoService()
 
+  const theme = useTheme()
+
   function closeModal() {
     setModalVisible(false)
   }
 
   function openModal() {
     setModalVisible(true)
+  }
+
+  function handleVideoSubmit(event: FormEvent) {
+    event.preventDefault()
+    const formValues: VideoProps = {
+      title: formRegister.formData.title,
+      url: formRegister.formData.url,
+      thumb: getThumbFromVideo(formRegister.formData.url),
+      type: formRegister.formData.type
+    }
+    service.createVideo(formValues)
+    .then((data) => {
+      Swal.fire({
+        title: 'Vídeo adicionado com sucesso!',
+        text: 'Você pode visualizar este vídeo na sua playlist.',
+        icon: 'success',
+        background: `${theme.backgroundBase}`,
+        color: `${theme.textColorBase}`
+      })
+    })
+
+    formRegister.clearForm()
+    closeModal()
   }
 
   return (
@@ -30,23 +58,7 @@ export function RegisterVideo() {
       {modalVisible &&
         (
           <form
-            onSubmit={(e: FormEvent) => {
-              e.preventDefault()
-              const formValues: VideoProps = {
-                title: formRegister.formData.title,
-                url: formRegister.formData.url,
-                thumb: getThumbFromVideo(formRegister.formData.url),
-                type: formRegister.formData.type
-              }
-              service.createVideo(formValues)
-              .then((data) => {
-                //Criar um alerta
-                console.log(data)
-              })
-
-              formRegister.clearForm()
-              closeModal()
-            }}
+            onSubmit={handleVideoSubmit}
           >
             <div>
               <button type="button" className="close-modal" onClick={closeModal}>
