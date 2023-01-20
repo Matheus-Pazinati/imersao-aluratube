@@ -23,7 +23,7 @@
 <ul>
   <li>Criar um alerta (personalizado de acordo com o tema da página) quando um vídeo for adicionado. - Ok ✔️</li>
   <li>Adicionar um botão em cada vídeo para permitir a exclusão do mesmo. - Ok ✔️</li>
-  <li>Após adicionar um novo vídeo, inclui-lo instantaneamente na playlist correspondente.</li>
+  <li>Após adicionar um novo vídeo, inclui-lo instantaneamente na playlist correspondente. - Ok ✔️</li>
 </ul>
 <br>
 <h2>🔖 Layout</h2>
