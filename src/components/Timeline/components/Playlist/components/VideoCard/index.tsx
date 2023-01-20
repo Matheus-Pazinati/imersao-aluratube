@@ -1,6 +1,5 @@
 import { DeleteButton, StyledVideo, VideoContainer } from './styles'
 import { Trash } from 'phosphor-react'
-import Swal from 'sweetalert2';
 
 interface VideoType {
   id?: number | undefined;

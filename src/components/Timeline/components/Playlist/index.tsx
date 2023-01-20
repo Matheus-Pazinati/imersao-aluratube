@@ -1,7 +1,7 @@
 import { VideoCard } from "./components/VideoCard";
-import { StyledPlaylist} from "./styles";
+import { StyledPlaylist } from "./styles";
 
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 
 import { SearchContext } from '../../../../contexts/SearchContext'
 
@@ -33,16 +33,17 @@ export function Playlist({ title, playlist }: PlaylistProps) {
       confirmButtonColor: 'black',
       denyButtonText: "Não"
     })
-    .then((action) => {
-      if (action.isDenied) {
-        return
-      }
-      service.deleteVideo(videoId)
-      .then((data) => {
-        
+      .then((action) => {
+        if (action.isDenied) {
+          return
+        }
+        handleVideoOnPlaylist(videoListWithoutDeletedOne)
+        service.deleteVideo(videoId)
+        .then((data) => {
+          console.log("Excluiu")
+        })
+        console.clear()
       })
-      handleVideoOnPlaylist(videoListWithoutDeletedOne)
-    })
   }
 
   const playlistFiltered = playlist.filter((item) => {
@@ -56,14 +57,14 @@ export function Playlist({ title, playlist }: PlaylistProps) {
         {playlistFiltered.map((video) => {
           return (
             <li key={video.id}>
-              <VideoCard 
+              <VideoCard
                 data={video}
                 onDelete={deleteVideo}
-               />
+              />
             </li>
           )
         })}
       </ul>
     </StyledPlaylist>
-  ) 
+  )
 }

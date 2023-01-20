@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useContext, useState } from "react";
 
 import { StyledRegisterVideo } from "./styles";
 
@@ -7,6 +7,7 @@ import { VideoProps, videoService } from "../../services/videoService";
 
 import Swal from 'sweetalert2'
 import { useTheme } from "styled-components";
+import { VideosContext } from "../../contexts/VideosContext";
 
 function getThumbFromVideo(url: string) {
   return `https://img.youtube.com/vi/${url.split("v=")[1]}/hqdefault.jpg`
@@ -16,6 +17,8 @@ export function RegisterVideo() {
   const [modalVisible, setModalVisible] = useState(false)
   const formRegister = useForm()
   const service = videoService()
+
+  const { handleVideoOnPlaylist, playlistVideos } = useContext(VideosContext)
 
   const theme = useTheme()
 
@@ -35,6 +38,7 @@ export function RegisterVideo() {
       thumb: getThumbFromVideo(formRegister.formData.url),
       type: formRegister.formData.type
     }
+    handleVideoOnPlaylist([...playlistVideos, formValues])
     service.createVideo(formValues)
     .then((data) => {
       Swal.fire({

@@ -4,8 +4,6 @@ import { VideoProps, videoService } from "../../services/videoService";
 import { Playlist } from "./components/Playlist";
 import { StyledTimeline } from "./styles";
 
-
-
 export function Timeline() {
   const service = videoService()
   
