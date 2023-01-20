@@ -22,8 +22,8 @@
 <h2>📌 Funcionalidades a serem implementadas</h2>
 <ul>
   <li>Criar um alerta (personalizado de acordo com o tema da página) quando um vídeo for adicionado. - Ok ✔️</li>
-  <li>Adicionar um botão em cada vídeo para deletar o mesmo.</li>
-  <li>Criar sistema de Real-Time, para quando um novo vídeo for adicionado, o back-end detectar uma mudança no banco, e atualizar a página com o novo vídeo.</li>
+  <li>Adicionar um botão em cada vídeo para permitir a exclusão do mesmo. - Ok ✔️</li>
+  <li>Após adicionar um novo vídeo, inclui-lo instantaneamente na playlist correspondente.</li>
 </ul>
 <br>
 <h2>🔖 Layout</h2>
