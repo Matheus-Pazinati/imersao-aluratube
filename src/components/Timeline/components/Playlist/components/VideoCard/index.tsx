@@ -1,5 +1,6 @@
 import { DeleteButton, StyledVideo, VideoContainer } from './styles'
 import { Trash } from 'phosphor-react'
+import Swal from 'sweetalert2';
 
 interface VideoType {
   title: string;
@@ -12,6 +13,24 @@ interface VideoCardProps {
 }
 
 export function VideoCard({ data }: VideoCardProps) {
+
+  function handleDeleteVideo() {
+    Swal.fire({
+      icon: 'question',
+      title: 'Tem certeza que quer excluir este vídeo?',
+      showDenyButton: true,
+      confirmButtonText: "Sim",
+      confirmButtonColor: 'black',
+      denyButtonText: "Não"
+    })
+    .then((action) => {
+      if (action.isDenied) {
+        console.log('Cancelou')
+        return
+      }
+      console.log('Confirmou')
+    })
+  }
   return (
     <VideoContainer>
       <StyledVideo href={data.url} target="_blank">
@@ -22,6 +41,7 @@ export function VideoCard({ data }: VideoCardProps) {
       </StyledVideo>
       <DeleteButton 
         type='button'
+        onClick={handleDeleteVideo}
       >
         <Trash size={20} weight={'fill'} color="#FAFAFA" />
       </DeleteButton>
