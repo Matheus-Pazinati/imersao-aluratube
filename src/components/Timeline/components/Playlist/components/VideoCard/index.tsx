@@ -19,6 +19,7 @@ export function VideoCard({ data, onDelete }: VideoCardProps) {
   function handleDeleteVideo() {
     onDelete(data.id)
   }
+
   return (
     <VideoContainer>
       <StyledVideo href={data.url} target="_blank">

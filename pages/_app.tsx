@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components'
 import { RegisterVideo } from '../src/components/RegisterVideo'
 
 import { ColorModeProvider, ColorModeContext, ColorModeProviderProps } from '../src/contexts/ColorModeContext'
+import { VideosContextProvider } from '../src/contexts/VideosContext'
 
 import { CSSReset } from '../src/styles/global'
 import { defaultTheme } from '../src/styles/themes/default'
@@ -22,8 +23,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ThemeProvider theme={defaultTheme[colorMode]}>
       <CSSReset />
-      <Component {...pageProps} />
-      <RegisterVideo />
+      <VideosContextProvider>
+        <Component {...pageProps} />
+        <RegisterVideo />
+      </VideosContextProvider>
     </ThemeProvider>
   )
 }

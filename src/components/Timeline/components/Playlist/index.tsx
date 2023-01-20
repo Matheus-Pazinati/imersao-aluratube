@@ -1,30 +1,25 @@
 import { VideoCard } from "./components/VideoCard";
 import { StyledPlaylist} from "./styles";
 
-import { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect } from 'react'
 
 import { SearchContext } from '../../../../contexts/SearchContext'
 
 import { videoService, VideoProps } from "../../../../services/videoService";
 import Swal from "sweetalert2";
+import { VideosContext } from "../../../../contexts/VideosContext";
 
 export interface PlaylistProps {
   title: string
+  playlist: VideoProps[]
 }
 
-export function Playlist({ title }: PlaylistProps) {
+export function Playlist({ title, playlist }: PlaylistProps) {
   const service = videoService()
-  const [playlistVideos, setPlaylistVideos] = useState<VideoProps[]>([])
+
+  const { playlistVideos, handleVideoOnPlaylist } = useContext(VideosContext)
 
   const { searchFilter } = useContext(SearchContext)
-
-  async function getVideosFromDataBase() {
-    const { data } = await service.getAllVideos()
-    const playlist = data?.filter((videos) => {
-      return videos.type === title
-    })
-    setPlaylistVideos(playlist as VideoProps[])
-  }
 
   function deleteVideo(videoId: number | undefined) {
     const videoListWithoutDeletedOne = playlistVideos.filter((video) => {
@@ -43,15 +38,14 @@ export function Playlist({ title }: PlaylistProps) {
         return
       }
       service.deleteVideo(videoId)
-      setPlaylistVideos(videoListWithoutDeletedOne)
+      .then((data) => {
+        
+      })
+      handleVideoOnPlaylist(videoListWithoutDeletedOne)
     })
   }
 
-  useEffect(() => {
-    getVideosFromDataBase()
-  },[])
-
-  const playlistFiltered = playlistVideos.filter((item) => {
+  const playlistFiltered = playlist.filter((item) => {
     return item.title.toLowerCase().includes(searchFilter.toLowerCase())
   })
 
@@ -59,11 +53,11 @@ export function Playlist({ title }: PlaylistProps) {
     <StyledPlaylist>
       <h2>{title}</h2>
       <ul>
-        {playlistFiltered.map((playlist) => {
+        {playlistFiltered.map((video) => {
           return (
-            <li key={playlist.id}>
+            <li key={video.id}>
               <VideoCard 
-                data={playlist}
+                data={video}
                 onDelete={deleteVideo}
                />
             </li>
