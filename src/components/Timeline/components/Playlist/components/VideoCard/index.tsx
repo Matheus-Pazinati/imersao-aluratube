@@ -1,4 +1,5 @@
-import { StyledVideo } from './styles'
+import { DeleteButton, StyledVideo, VideoContainer } from './styles'
+import { Trash } from 'phosphor-react'
 
 interface VideoType {
   title: string;
@@ -12,9 +13,18 @@ interface VideoCardProps {
 
 export function VideoCard({ data }: VideoCardProps) {
   return (
-    <StyledVideo href={data.url} target="_blank">
-      <img src={data.thumb} alt="" />
-      <span>{data.title}</span>
-    </StyledVideo>
+    <VideoContainer>
+      <StyledVideo href={data.url} target="_blank">
+        <img src={data.thumb} alt="" />
+        <div>
+          <span>{data.title}</span>
+        </div>
+      </StyledVideo>
+      <DeleteButton 
+        type='button'
+      >
+        <Trash size={20} weight={'fill'} color="#FAFAFA" />
+      </DeleteButton>
+    </VideoContainer>
   )
 }
