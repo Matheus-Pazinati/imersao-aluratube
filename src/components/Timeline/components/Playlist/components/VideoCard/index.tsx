@@ -3,6 +3,7 @@ import { Trash } from 'phosphor-react'
 import Swal from 'sweetalert2';
 
 interface VideoType {
+  id?: number | undefined;
   title: string;
   url: string;
   thumb: string
@@ -10,26 +11,13 @@ interface VideoType {
 
 interface VideoCardProps {
   data: VideoType
+  onDelete: (videoId: number | undefined) => void
 }
 
-export function VideoCard({ data }: VideoCardProps) {
+export function VideoCard({ data, onDelete }: VideoCardProps) {
 
   function handleDeleteVideo() {
-    Swal.fire({
-      icon: 'question',
-      title: 'Tem certeza que quer excluir este vídeo?',
-      showDenyButton: true,
-      confirmButtonText: "Sim",
-      confirmButtonColor: 'black',
-      denyButtonText: "Não"
-    })
-    .then((action) => {
-      if (action.isDenied) {
-        console.log('Cancelou')
-        return
-      }
-      console.log('Confirmou')
-    })
+    onDelete(data.id)
   }
   return (
     <VideoContainer>

@@ -6,6 +6,7 @@ import { useContext, useEffect, useState } from 'react'
 import { SearchContext } from '../../../../contexts/SearchContext'
 
 import { videoService, VideoProps } from "../../../../services/videoService";
+import Swal from "sweetalert2";
 
 export interface PlaylistProps {
   title: string
@@ -25,6 +26,27 @@ export function Playlist({ title }: PlaylistProps) {
     setPlaylistVideos(playlist as VideoProps[])
   }
 
+  function deleteVideo(videoId: number | undefined) {
+    const videoListWithoutDeletedOne = playlistVideos.filter((video) => {
+      return video.id !== videoId
+    })
+    Swal.fire({
+      icon: 'question',
+      title: 'Tem certeza que quer excluir este vídeo?',
+      showDenyButton: true,
+      confirmButtonText: "Sim",
+      confirmButtonColor: 'black',
+      denyButtonText: "Não"
+    })
+    .then((action) => {
+      if (action.isDenied) {
+        return
+      }
+      service.deleteVideo(videoId)
+      setPlaylistVideos(videoListWithoutDeletedOne)
+    })
+  }
+
   useEffect(() => {
     getVideosFromDataBase()
   },[])
@@ -39,8 +61,11 @@ export function Playlist({ title }: PlaylistProps) {
       <ul>
         {playlistFiltered.map((playlist) => {
           return (
-            <li>
-              <VideoCard data={playlist} />
+            <li key={playlist.id}>
+              <VideoCard 
+                data={playlist}
+                onDelete={deleteVideo}
+               />
             </li>
           )
         })}

@@ -5,6 +5,7 @@ const supabaseKey = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS
 const supabase = createClient(supabaseUrl, supabaseKey)
 
 export interface VideoProps {
+  id?: number;
   title: string,
   url: string,
   thumb: string,
@@ -18,6 +19,11 @@ export function videoService() {
     },
     getAllVideos() {
       return supabase.from("video").select("*")
+    },
+    deleteVideo(videoId: number | undefined) {
+      return supabase.from("video")
+      .delete()
+      .eq('id', videoId)
     }
   }
 }
